@@ -34,21 +34,21 @@ curl -s -X POST https://demokratiebot.de/_matrix/client/v3/login \
 ## Schritt 2 – Staging-Verzeichnis anlegen
 
 ```bash
-cp -r /home/mxbotlab-admin/mx/bots/demokratiebot \
-      /home/mxbotlab-admin/mx/bots/demokratiebot-staging
+cp -r /home/<ADMIN-USER>/mx/bots/demokratiebot \
+      /home/<ADMIN-USER>/mx/bots/demokratiebot-staging
 ```
 
 Sidecar-Store leeren (neuer Account braucht frischen Store):
 ```bash
-rm -rf /home/mxbotlab-admin/mx/bots/demokratiebot-staging/matrix_sidecar/store
-mkdir  /home/mxbotlab-admin/mx/bots/demokratiebot-staging/matrix_sidecar/store
+rm -rf /home/<ADMIN-USER>/mx/bots/demokratiebot-staging/matrix_sidecar/store
+mkdir  /home/<ADMIN-USER>/mx/bots/demokratiebot-staging/matrix_sidecar/store
 ```
 
 Data-Verzeichnis leeren (frische Staging-Daten):
 ```bash
-rm -rf /home/mxbotlab-admin/mx/bots/demokratiebot-staging/data
-mkdir -p /home/mxbotlab-admin/mx/bots/demokratiebot-staging/data/user_states
-mkdir -p /home/mxbotlab-admin/mx/bots/demokratiebot-staging/data/logs
+rm -rf /home/<ADMIN-USER>/mx/bots/demokratiebot-staging/data
+mkdir -p /home/<ADMIN-USER>/mx/bots/demokratiebot-staging/data/user_states
+mkdir -p /home/<ADMIN-USER>/mx/bots/demokratiebot-staging/data/logs
 ```
 
 ---
@@ -56,7 +56,7 @@ mkdir -p /home/mxbotlab-admin/mx/bots/demokratiebot-staging/data/logs
 ## Schritt 3 – .env.staging anlegen
 
 ```bash
-cd /home/mxbotlab-admin/mx/bots/demokratiebot-staging
+cd /home/<ADMIN-USER>/mx/bots/demokratiebot-staging
 cp .env.staging.example .env.staging
 nano .env.staging
 ```
@@ -106,7 +106,7 @@ Screen verlassen ohne zu stoppen: `Ctrl+A`, dann `D`
 ## Staging updaten (nach Code-Änderungen)
 
 ```bash
-cd /home/mxbotlab-admin/mx/bots/demokratiebot-staging
+cd /home/<ADMIN-USER>/mx/bots/demokratiebot-staging
 git pull origin main
 bash start_bot_staging.sh
 ```

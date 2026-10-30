@@ -5,7 +5,7 @@
 
 set -euo pipefail
 
-BOT_ROOT="/home/finklamott/demokratiebot"
+BOT_ROOT="/home/<USER>/demokratiebot"
 SIDECAR_DIR="${BOT_ROOT}/matrix_sidecar"
 
 cd "${BOT_ROOT}"
